@@ -97,6 +97,42 @@
 
                 //run time data function every 1 second
                 setInterval(currentTime, 1000); //setting timer
+
+                var utchr = d.getUTCHours(); //get current greenwich mean time (GMT)
+                var timeDiff; // to store time differnce between GMT hour and local hour
+                var adjTimeDiff; //to store time difference coverted to positive number
+                var timeZone; //to store the 4 time zones (PT, MT, CT, ET)
+
+                //convert GMT from military time to standard time
+                if (utchr > 12){
+                    utchr -= 12;
+                }
+
+                //calculate time difference between GMT hout and local hour
+                timeDiff = hr - utchr;
+
+                //convert time difference, if negative, to positive
+                if (timeDiff < 0){
+                    adjTimeDiff = -timeDiff;
+                }
+
+                //define time zone
+                if ((timeDiff == 5) || (adjTimeDiff == 5)){
+                    timeZone = "ET";
+                } else if ((timeDiff == 6) || (adjTimeDiff == 6)){
+                    timeZone = "CT";
+                } else if ((timeDiff == 7) || (adjTimeDiff == 7)){
+                    timeZone = "MT";
+                } else if ((timeDiff == 8) || (adjTimeDiff == 8)){
+                    timeZone = "PT";
+                }
+
+                //assemble time format to display
+                var time = hr + ":" + min + ":" +sec + " " + ampm + " " + timeZone;
+
+                //display current local time and time zone on HTML elements
+                document.getElementById("clock").innerText = time; //adding time
+
             }
 
             //initial run of time data function
