@@ -308,3 +308,15 @@ section{
 .fourcliffs {
     margin: 0 150px;
 }
+
+
+/* clock */
+#timeofday {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3a3a3a;
+}
+
+#clock{
+    color: #125688;
+}
