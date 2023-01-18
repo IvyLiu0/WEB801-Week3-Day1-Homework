@@ -108,8 +108,8 @@
                     utchr -= 12;
                 }
 
-                //calculate time difference between GMT hout and local hour
-                timeDiff = -utchr - hr;
+                //calculate time difference between GMT hour and local hour
+                timeDiff = 12 - hr + utchr;
 
                 //convert time difference, if negative, to positive
                 if (timeDiff < 0){

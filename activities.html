@@ -155,7 +155,7 @@
                 }
 
                 //calculate time difference between GMT hout and local hour
-                timeDiff = -utchr - hr;
+                timeDiff = 12 - hr + utchr;
 
                 //convert time difference, if negative, to positive
                 if (timeDiff < 0){
