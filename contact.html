@@ -159,8 +159,8 @@
                     utchr -= 12;
                 }
 
-                //calculate time difference between GMT hout and local hour
-                timeDiff = 12 - hr + utchr;
+                //calculate time difference between GMT hour and local hour
+                timeDiff = hr - utchr;
 
                 //convert time difference, if negative, to positive
                 if (timeDiff < 0){
@@ -168,13 +168,13 @@
                 }
 
                 //define time zone
-                if ((timeDiff == 5) || (adjTimeDiff == 5)){
+                if ((timeDiff == 7) || (adjTimeDiff == 7)){
                     timeZone = "ET";
                 } else if ((timeDiff == 6) || (adjTimeDiff == 6)){
                     timeZone = "CT";
-                } else if ((timeDiff == 7) || (adjTimeDiff == 7)){
+                } else if ((timeDiff == 5) || (adjTimeDiff == 5)){
                     timeZone = "MT";
-                } else if ((timeDiff == 8) || (adjTimeDiff == 8)){
+                } else if ((timeDiff == 4) || (adjTimeDiff == 4)){
                     timeZone = "PT";
                 }
 
